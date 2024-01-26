@@ -21,8 +21,8 @@
             timeout-ms = <20>;
             key-positions = <47 49>;
             bindings = <&kp Q>;
-        }
-    }
+        };
+    };
 };
 
 / {
