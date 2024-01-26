@@ -14,12 +14,12 @@
         compatible = "zmk,combos";
         combo_key_z {
             timeout-ms = <20>;
-            key-positions = <14 15>;
+            key-positions = <13 14>;
             bindings = <&kp Z>;
         };
         combo_key_q {
             timeout-ms = <20>;
-            key-positions = <47 49>;
+            key-positions = <46 48>;
             bindings = <&kp Q>;
         };
     };
