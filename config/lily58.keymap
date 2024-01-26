@@ -10,6 +10,22 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_key_z {
+            timeout-ms = <20>;
+            key-positions = <14 15>;
+            bindings = <&kp Z>;
+        }
+        combo_key_q {
+            timeout-ms = <20>;
+            key-positions = <47 49>;
+            bindings = <&kp Q>;
+        }
+    }
+}
+
+/ {
     keymap {
         compatible = "zmk,keymap";
         default_layer {
