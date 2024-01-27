@@ -16,6 +16,11 @@
 #define FUNCTION 4
 #define SHORTCUT 5
 
+&mt {
+    tapping-term-ms = <0>;
+    retro-tap;
+};
+
 / {
     combos {
         compatible = "zmk,combos";
