@@ -22,13 +22,13 @@
         combo_key_z {
             timeout-ms = <20>;
             key-positions = <13 14>;
-            layers = <0>;
+            layers = <DEFAULT>;
             bindings = <&kp Z>;
         };
         combo_key_q {
             timeout-ms = <20>;
             key-positions = <46 48>;
-            layers = <0>;
+            layers = <DEFAULT>;
             bindings = <&kp Q>;
         };
         combo_to_default_layer {
@@ -39,13 +39,13 @@
         combo_to_qwerty_layer {
             timeout-ms = <20>;
             key-positions = <11 23 35>;
-            layers = <0>;
+            layers = <DEFAULT>;
             bindings = <&to 1>;
         };
         combo_bootloader {
             timeout-ms = <20>;
             key-positions = <26 27 28>;
-            layers = <5>;
+            layers = <SHORTCUT>;
             bindings = <&bootloader>;
         };
     };
@@ -62,7 +62,7 @@
 &kp TAB   &kp J       &kp G       &kp M      &kp P  &kp V             &kp COMMA &kp DOT &kp FSLH   &kp SQT     &kp EQUAL   &kp PSCRN
 &kp ESC   &mt LCTRL R &mt LSHFT S &mt LALT N &kp D  &kp B             &kp SEMI  &kp A   &mt RALT E &mt RSHFT I &mt RCTRL H &kp BSLH
 &kp GRAVE &kp X       &kp F       &kp L      &kp C  &kp W &kp LBKT &kp RBKT &kp MINUS &kp U &kp O  &kp Y       &kp K       &none
-                 &kp HOME &kp LGUI &lt SHORTCUT BSPC &lt NUMBER T &lt SYMBOL SPACE &lt FUNCTION RET &kp DEL &kp END
+          &kp HOME &kp LGUI &lt SHORTCUT BSPC &lt NUMBER T            &lt SYMBOL SPACE &lt FUNCTION RET &kp DEL &kp END
             >;
         };
 
@@ -73,7 +73,7 @@
 &kp ESC   &kp Q  &kp W  &kp E  &kp R  &kp T                   &kp Y  &kp U  &kp I     &kp O   &kp P    &kp MINUS
 &kp TAB   &kp A  &kp S  &kp D  &kp F  &kp G                   &kp H  &kp J  &kp K     &kp L   &kp SEMI &kp SQT
 &kp LSHFT &kp Z  &kp X  &kp C  &kp V  &kp B &kp LBKT &kp RBKT &kp N  &kp M  &kp COMMA &kp DOT &kp FLSH &kp RSHFT
-        &kp LALT &kp LGUI &lt SHORTCUT BSPC &lt NUMBER T &lt SYMBOL SPACE &lt FUNCTION RET  &kp BSPC &kp RGUI
+      &kp HOME &kp LGUI &lt SHORTCUT BSPC &lt NUMBER T        &lt SYMBOL SPACE &lt FUNCTION RET &kp DEL &kp END
             >;
         };
 
