@@ -9,18 +9,44 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 
+#define DEFAULT 0
+#define QWERTY 1
+#define SYMBOL 2
+#define NUMBER 3
+#define FUNCTION 4
+#define SHORTCUT 5
+
 / {
     combos {
         compatible = "zmk,combos";
         combo_key_z {
             timeout-ms = <20>;
             key-positions = <13 14>;
+            layers = <0>;
             bindings = <&kp Z>;
         };
         combo_key_q {
             timeout-ms = <20>;
             key-positions = <46 48>;
+            layers = <0>;
             bindings = <&kp Q>;
+        };
+        combo_to_default_layer {
+            timeout-ms = <20>;
+            key-positions = <0 12 24>;
+            bindings = <&to 0>;
+        };
+        combo_to_qwerty_layer {
+            timeout-ms = <20>;
+            key-positions = <11 23 35>;
+            layers = <0>;
+            bindings = <&to 1>;
+        };
+        combo_bootloader {
+            timeout-ms = <20>;
+            key-positions = <26 27 28>;
+            layers = <5>;
+            bindings = <&bootloader>;
         };
     };
 };
@@ -28,15 +54,53 @@
 / {
     keymap {
         compatible = "zmk,keymap";
+
         default_layer {
             display-name = "Base";
             bindings = <
-&kp ESC   &kp N1 &kp N2 &kp N3   &kp N4   &kp N5                     &kp N6 &kp N7  &kp N8    &kp N9  &kp N0   &kp GRAVE
-&kp ESC   &kp J  &kp G  &kp M    &kp P    &kp V                      &kp COMMA  &kp DOT    &kp FSLH     &kp O   &kp P    &kp MINUS
-&kp TAB   &kp R  &kp S  &kp N    &kp D    &kp B                      &kp SEMI  &kp A    &kp E     &kp I   &kp H &kp SQT
-&kp LSHFT &kp X  &kp F  &kp L    &kp C    &kp W  &kp LBKT   &kp RBKT &kp MINUS  &kp U    &kp O &kp Y &kp K &kp RSHFT
-                        &kp LALT &kp LGUI &kp BSPC  &kp T  &kp SPACE  &kp RET  &kp BSPC &kp RGUI
+&none     &kp N1      &kp N2      &kp N3     &kp N4 &kp N5            &kp N6    &kp N7  &kp N8     &kp N9      &kp N0      &none
+&kp TAB   &kp J       &kp G       &kp M      &kp P  &kp V             &kp COMMA &kp DOT &kp FSLH   &kp SQT     &kp EQUAL   &kp PSCRN
+&kp ESC   &mt LCTRL R &mt LSHFT S &mt LALT N &kp D  &kp B             &kp SEMI  &kp A   &mt RALT E &mt RSHFT I &mt RCTRL H &kp BSLH
+&kp GRAVE &kp X       &kp F       &kp L      &kp C  &kp W &kp LBKT &kp RBKT &kp MINUS &kp U &kp O  &kp Y       &kp K       &none
+                 &kp HOME &kp LGUI &lt SHORTCUT BSPC &lt NUMBER T &lt SYMBOL SPACE &lt FUNCTION RET &kp DEL &kp END
             >;
         };
+
+        qwerty_layer {
+&kp GRAVE &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                  &kp N6 &kp N7 &kp N8    &kp N9  &kp N0   &kp GRAVE
+&kp ESC   &kp Q  &kp W  &kp E  &kp R  &kp T                   &kp Y  &kp U  &kp I     &kp O   &kp P    &kp MINUS
+&kp TAB   &kp A  &kp S  &kp D  &kp F  &kp G                   &kp H  &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+&kp LSHFT &kp Z  &kp X  &kp C  &kp V  &kp B &kp LBKT &kp RBKT &kp N  &kp M  &kp COMMA &kp DOT &kp FLSH &kp RSHFT
+        &kp LALT &kp LGUI &lt SHORTCUT BSPC &lt NUMBER T &lt SYMBOL SPACE &lt FUNCTION RET  &kp BSPC &kp RGUI
+        }
+
+        symbol_layer {
+&none &none &none &none &none &none &none &none &none &none &none &none &none &none
+&kp TILDE &kp EXCL &kp AT &kp HASH &kp DOLLAR &kp PERCENT             &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR &none
+&none &none &none &none &none &none             &none &none &none &kp LEFT_BRACKET &kp RIGHT_BRACKET &none
+&none &none &none &none &none &none             &none &none &none &kp LEFT_BRACE &kp RIGHT_BRACE &none
+                  &none &none &none &none &none &none &none &none
+
+        number_layer {
+&none &none     &none     &none     &none     &none             &none     &none     &none     &none     &none     &none
+&none &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_N4 &kp KP_N5         &kp KP_N6 &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_N0 &none
+&none &none     &none     &none     &none     &none             &none     &kp KP_N4 &kp KP_N5 &kp KP_N6 &none     &none
+&none &none     &none     &none     &none     &none &none &none &none     &kp KP_N1 &kp KP_N2 &kp KP_N3 &none     &none
+                &none     &none     &none     &none             &none     &kp KP_N0 &none     &none
+        }
+
+        function_layer {
+&none  &none  &none  &none   &none   &none             &none &none    &none    &none &none &none
+&kp F1 &kp F2 &kp F3 &kp F4  &kp F5  &kp F6            &none &none    &kp UP   &none &none &none
+&kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12           &none &kp LEFT &kp DOWN &kp RIGHT &none &none
+&none &kp LCTRL &kp LSHFT &kp LALT &none &none &none &none &none &none &none &none &none &none
+                  &none &none &none &none &none &none &none &none
+
+        shortcut_layer {
+&none &none &none &none &none &none &none &none &none &none &none &none &none &none
+&kp LG(LBKT) &kp LC(X) &kp LC(C) &kp LC(V) &kp LC(LS(V)) &none             &none &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(Z) &kp LC(A) &kp LG(RBKT)
+&kp F13 &kp F14 &kp F15 &kp F16 &kp F17 &kp F18 &kp F19 &kp F20 &kp F21 &kp F22 &kp F23 &kp F24
+&none &none &none &none &none &none &none &none &none &none &none &none &none &none
+                  &none &none &none &none &none &none &none &none
     };
 };
