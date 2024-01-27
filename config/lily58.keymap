@@ -48,9 +48,15 @@
             layers = <DEFAULT>;
             bindings = <&to 1>;
         };
-        combo_bootloader {
+        combo_bootloader_left {
             timeout-ms = <20>;
             key-positions = <26 27 28>;
+            layers = <SHORTCUT>;
+            bindings = <&bootloader>;
+        };
+        combo_bootloader_right {
+            timeout-ms = <20>;
+            key-positions = <31 32 33>;
             layers = <SHORTCUT>;
             bindings = <&bootloader>;
         };
