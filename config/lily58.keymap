@@ -17,7 +17,9 @@
 #define SHORTCUT 5
 
 &mt {
-    tapping-term-ms = <0>;
+    tapping-term-ms = <200>;
+    require-prior-idle-ms = <125>;
+    flavor = "tap-unless-interrupted";
     retro-tap;
 };
 
