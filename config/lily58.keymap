@@ -18,9 +18,8 @@
 
 &mt {
     tapping-term-ms = <200>;
-    require-prior-idle-ms = <125>;
+    require-prior-idle-ms = <200>;
     flavor = "tap-unless-interrupted";
-    retro-tap;
 };
 
 / {
