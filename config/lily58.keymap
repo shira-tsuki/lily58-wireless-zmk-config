@@ -48,18 +48,6 @@
             layers = <DEFAULT>;
             bindings = <&to 1>;
         };
-        combo_bootloader_left {
-            timeout-ms = <20>;
-            key-positions = <26 27 28>;
-            layers = <SHORTCUT>;
-            bindings = <&bootloader>;
-        };
-        combo_bootloader_right {
-            timeout-ms = <20>;
-            key-positions = <31 32 33>;
-            layers = <SHORTCUT>;
-            bindings = <&bootloader>;
-        };
     };
 };
 
@@ -125,7 +113,7 @@
         shortcut_layer {
             display-name = "Shortcut";
             bindings = <
-&none &none &none &none &none &none     &none &none &none &none &none &none
+&bootloader &none &none &none &none &none     &none &none &none &none &none &bootloader
 &kp LG(LBKT) &kp LC(X) &kp LC(C) &kp LC(V) &kp LC(LS(V)) &none             &none &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(Z) &kp LC(A) &kp LG(RBKT)
 &kp F13 &kp F14 &kp F15 &kp F16 &kp F17 &kp F18 &kp F19 &kp F20 &kp F21 &kp F22 &kp F23 &kp F24
 &none &none &none &none &none &none &none &none &none &none &none &none &none &none
