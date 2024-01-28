@@ -69,10 +69,10 @@
         default_layer {
             display-name = "Default";
             bindings = <
-&none           &kp N1          &kp N2          &kp N3          &kp N4          &kp N5                                          &kp N6          &kp N7          &kp N8          &kp N9          &kp N0          &none
+&none           &kp N1          &kp N2          &kp N3          &kp N4          &kp N5                                          &kp N6          &kp N7          &kp N8          &kp N9          &kp N0          &kp PG_UP
 &kp TAB         &kp J           &kp G           &kp M           &kp P           &kp V                                           &kp COMMA       &kp DOT         &kp FSLH        &kp SQT         &kp EQUAL       &kp PSCRN
 &kp ESC         &mt LCTRL R     &mt LSHFT S     &mt LALT N      &kp D           &kp B                                           &kp SEMI        &kp A           &mt RALT E      &mt RSHFT I     &mt RCTRL H     &kp BSLH
-&kp GRAVE       &kp X           &kp F           &kp L           &kp C           &kp W           &kp LBKT        &kp RBKT        &kp MINUS       &kp U           &kp O           &kp Y           &kp K           &none
+&kp GRAVE       &kp X           &kp F           &kp L           &kp C           &kp W           &kp LBKT        &kp RBKT        &kp MINUS       &kp U           &kp O           &kp Y           &kp K           &kp PG_DN
                                 &kp HOME        &kp LGUI        &lt SHORTCUT BSPC &lt NUMBER T                                  &lt SYMBOL SPACE &lt FUNCTION RET &kp DEL       &kp END
             >;
         };
