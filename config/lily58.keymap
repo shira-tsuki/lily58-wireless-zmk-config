@@ -59,16 +59,6 @@
 };
 
 / {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        dangerous_layer {
-            if-layers = <SYMBOL NUMBER>;
-            then-layer = <DANGEROUS>;
-        };
-    };
-};
-
-/ {
     keymap {
         compatible = "zmk,keymap";
 
