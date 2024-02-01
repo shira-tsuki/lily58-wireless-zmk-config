@@ -54,7 +54,7 @@
             key-positions = <0 1 2>;
             layers = <SHORTCUT>;
             bindings = <&sl DANGEROUS>;
-        }
+        };
     };
 };
 
