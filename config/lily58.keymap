@@ -117,7 +117,7 @@
             >;
         };
 
-        shortcut_layer 
+        shortcut_layer {
             display-name = "Shortcut";
             bindings = <
 &none           &none           &none           &none           &none           &none                                           &none           &none           &none           &none           &none           &none
