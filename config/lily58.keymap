@@ -126,7 +126,7 @@
 &none           &none           &none           &none           &none           &none           &none           &none           &none           &none           &none           &none           &none           &none
                                 &none           &none           &none           &none                                           &none           &none           &none           &none
             >;
-        };'/gmadt12z'/.drsnddgmd/.;mdjgmd='/.m/t
+        };
 
         dangerous_layer {
             display-name = "Dangerous";
